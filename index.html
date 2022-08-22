@@ -11,37 +11,36 @@
       <form>
           <div class="form-group">
             <label>Number:</label>
-            <input type="text" class="form-control" id="sayi" >
+            <input type="text" class="form-control" id="numberValue" >
            
           </div>
           <div class="form-group">
             <label>Result:</label>
-            <input type="text" class="form-control" id="sonuc" disabled>
+            <input type="text" class="form-control" id="resultItem" disabled>
           </div>
-          <button id="hesapla" type="button" class="btn btn-primary">Run</button>
+          <button id="cal" type="button" class="btn btn-primary">Run</button>
         </form>
     </div>
            
     <script>
-        var sayi=document.querySelector("#sayi");
-        var sonuc=document.querySelector("#sonuc");
-        var hesapla=document.querySelector("#hesapla");
+        var numberValue=document.querySelector("#numberValue");
+        var resultItem=document.querySelector("#resultItem");
+        var cal=document.querySelector("#cal");
         var evenOrOdd ="";
         
-        hesapla.onclick=function(){
-            var adet = 0,toplam=0;
-            var num=Number(sayi.value);
-            console.log(num);
+        cal.onclick=function(){
+            var amount = 0,total=0;
+            var num=Number(numberValue.value);
             while(num != 0)
             {
-               toplam=(num%10)+toplam;
+                total=(num%10)+total;
                num =Math.floor(num / 10);
-                ++adet;
+                ++amount;
             }
-            if(toplam % 2 == 0) evenOrOdd = "Even";
+            if(total % 2 == 0) evenOrOdd = "Even";
             else evenOrOdd = "Odd";
             
-            sonuc.value= "Result : " + toplam+ " it is " + evenOrOdd;
+            resultItem.value= "Result : " + total+ " it is " + evenOrOdd;
         } 
     </script>
         
